@@ -13,7 +13,7 @@ class AccountProvider extends React.Component {
     datejoined: "12/19/18",
     membershipLevel: "Silver",
     updateAccount: (account) => this.updateAccount(account),
-  };
+  }
 
   updateAccount = (account) => {
     this.setState({ ...account, });

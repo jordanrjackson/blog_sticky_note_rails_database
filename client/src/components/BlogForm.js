@@ -25,11 +25,12 @@ class BlogForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { ...this.state, };
-    const { closeForm, dispatch, } = this.props;
-    const func = this.props.id ? updateBlog : addBlog;
-    dispatch(func(blog));
-    closeForm();
+    const { dispatch, id, } = this.props;
+    const { name, } = this.state;
+    const blog = { name, id, complete: false, };
+    dispatch({ type: "ADD_BLOG", blog, });
+    dispatch({ type: "INC_ID"});
+    this.setState({ name: "", });
   }
 
   render() {
@@ -66,6 +67,10 @@ class BlogForm extends React.Component {
       </Form>
     )
   }
+}
+
+const mapStateToProps = (state) => {
+  return { id: state.nextId, };
 }
 
 export default connect()(BlogForm);

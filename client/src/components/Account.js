@@ -7,13 +7,13 @@ const Account = () => (
     { value => (
       <Card>
         <Card.Content>
-          <Card.Header>{ value.username }</Card.Header>
+          <Card.Header>{value.username}</Card.Header>
           <Card.Meta>
-            Date Joined: { value.dateJoined }
+            Date Joined: {value.dateJoined}
           </Card.Meta>
         </Card.Content>
         <Card.Content>
-          <p>Membership Level: { value.membershiplevel }</p>
+          <p>Membership Level: {value.membershipLevel}</p>
         </Card.Content>
       </Card>
     )}

@@ -8,20 +8,21 @@ class AccountForm extends React.Component {
     membershipLevel: this.props.membershipLevel,
   };
 
-  handleChange = (e, {name, value, }) => this.setState()({ [name]: value, });
-
   handleSubmit = (e) => {
     e.preventDefault();
     const account = { ...this.state, };
     this.props.updateAccount(account);
   }
 
+  handleChange = (e, {name, value, }) => this.setState({ [name]: value, });
+
   render() {
     const { username, membershipLevel, } = this.state;
+    
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
-          label="New Username"
+          label="Username"
           type="text"
           name="username"
           value={username}
@@ -34,7 +35,7 @@ class AccountForm extends React.Component {
           onChange={this.handleChange}
           options={membershipOptions}
         />
-        <Form.Button color="blue">Save</Form.Button>
+        <Form.Button color="purple" inverted>Submit</Form.Button>
       </Form>
     )
   }
